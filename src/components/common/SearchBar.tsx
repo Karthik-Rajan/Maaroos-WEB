@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { usePlacesWidget } from "react-google-autocomplete";
 import Geocode from "react-geocode";
+import { WindowScrollController } from "@fullcalendar/core/internal";
+import { setTokenSourceMapRange } from "typescript";
 
 const SearchBar = (props: any) => {
   Geocode.setLanguage("en");
@@ -53,9 +55,16 @@ const SearchBar = (props: any) => {
     props.vendor.then((res: any) => {
       input = res.search;
     });
+    
+    
+    
+    
+    
+    
   }, []);
 
   const fetchAddress = (response: any, isPlaceApi = false) => {
+    
     let city = "",
       state = "",
       locality = "",
@@ -89,6 +98,8 @@ const SearchBar = (props: any) => {
         ", " +
         country
     );
+    
+
 
     if (isPlaceApi) {
       const qLat = addr.geometry.location.lat();
@@ -134,12 +145,14 @@ const SearchBar = (props: any) => {
 
     setCoordinates(coordinatesTemp);
     setLocation(locationTemp);
+   
 
     window.location.href =
       `/listing?q=` + coordinatesTemp.lat + `,` + coordinatesTemp.lng;
   };
 
   return (
+  
     <div className="homepage-search-form">
       <Form
         ref={searchForm}

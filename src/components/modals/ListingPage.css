@@ -1,0 +1,79 @@
+/* Overlay styles */
+.ReactModal__Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  /* Content styles */
+  .ReactModal__Content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Close button styles */
+  .ReactModal__CloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Add custom styles for the popup content */
+  .ReactModal__Content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .ReactModal__Content p {
+    margin-bottom: 20px;
+  }
+  
+  .ReactModal__Content button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReactModal__Content button:hover {
+    background-color: #0056b3;
+  }
+
+  .ReactModal__Content--after-open {
+    transform: translateY(0);
+  }
+  
+  .ReactModal__Content--before-close {
+    transform: translateY(-100%);
+  }
+
+  .modal-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    z-index: 9999;
+  }

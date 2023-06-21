@@ -6,6 +6,7 @@ import SideBarHead from "./common/SideBarHead";
 import SideBarFilter from "./common/SideBarFilter";
 import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
+import VendorListingPage from "./modals/ListingPage";
 
 let input = {};
 
@@ -17,6 +18,7 @@ function List(props: any) {
   let [sideBar, setSideBar] = useState(true);
   let [loading, setLoading] = useState(true);
   let [search, setSearch] = useState(input);
+  let [modalisOpen, setModalIsOpen] = useState(false)
 
   const loc = useLocation();
 
@@ -40,11 +42,21 @@ function List(props: any) {
         setLoading(false);
         location = res.location;
         input = res.search;
+       
+        setTimeout(function(){
+          if(!q){
+            setModalIsOpen(true);
+          }
+
+        }, 2500)
+        
       })
       .catch((err: any) => {
         setList([]);
         setLoading(false);
       });
+
+      
 
     const coOrds = q ? q.split(",") : null;
     if (coOrds) {
@@ -82,6 +94,8 @@ function List(props: any) {
 
   return (
     <>
+    {modalisOpen && <VendorListingPage/>}
+
       {sideBar && (
         <SideBarFilter
           onClose={toggleSideBar}
