@@ -196,8 +196,8 @@ const Footer = (props : any) => {
 					}}
 					>
 					<BottomNavigationAction label="Home" icon={<Icofont icon="home"/>} />
-					<BottomNavigationAction label="Favorites" icon={<Icofont icon="favourite" />} />
-					<BottomNavigationAction label="Account" icon={<Icofont icon="users" />} />
+					<BottomNavigationAction label="Vendors" icon={<Icofont icon="listing-box" />} />
+					<BottomNavigationAction label="My account" icon={<Icofont icon="users" />} />
 			 </BottomNavigation>
 		    </>
     	);
